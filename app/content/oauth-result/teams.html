@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>KeeWeb</title>
+        <script src='https://statics.teams.cdn.office.net/sdk/v1.7.0/js/MicrosoftTeams.min.js'></script>
+    </head>
+    <body>
+        <script>
+            if (localStorage.getItem('teamsAuth') !== 'true') {
+                window.opener.postMessage(
+                    { storage: 'teams', search: location.search },
+                    window.location.origin
+                );
+                window.close();
+            } else {
+                const params = new URLSearchParams(window.location.search);
+                microsoftTeams.initialize(() => {
+                    microsoftTeams.authentication.notifySuccess(
+                        { storage: 'teams', search: location.search }
+                    );
+                });
+            }
+        </script>
+    </body>
+</html>

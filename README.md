@@ -1,3 +1,10 @@
+# KeeWeb for Microsoft Teams
+
+This fork provides a set of changes to host KeeWeb in a Microsoft Teams application tab with access to a kdbx file stored on a SharePoint site.
+It's work in progress.
+
+---
+
 # Free cross-platform password manager compatible with KeePass
 
 This webapp is a browser and desktop password manager compatible with KeePass databases. It doesn't require any server or additional resources.
@@ -25,7 +32,7 @@ You can download the latest distribution files from [gh-pages](https://github.co
 
 If you are using Docker:
 
-1. put your dh.pem, cert.pem, key.pem to /etc/nginx/external/ 
+1. put your dh.pem, cert.pem, key.pem to /etc/nginx/external/
 2. run this script:
 ```bash
 docker run --name keeweb -d -p 443:443 -p 80:80 -v $EXT_DIR:/etc/nginx/external/ antelle/keeweb
@@ -41,7 +48,7 @@ curl https://raw.githubusercontent.com/keeweb/keeweb/develop/dev-env.sh | bash -
 ```
 
 The app can be built with grunt: `grunt` (html files will be in `dist/`).  
-Desktop apps are built with `grunt desktop`. This requires some magic and currently works only on CI, 
+Desktop apps are built with `grunt desktop`. This requires some magic and currently works only on CI,
 you can find more details in [the GitHub Actions workflow](.github/workflows/build.yaml).  
 
 To run the desktop (electron) app without building an installer, build the app with `grunt` and start it this way:

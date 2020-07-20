@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>KeeWeb</title>
+        <script src='https://statics.teams.cdn.office.net/sdk/v1.7.0/js/MicrosoftTeams.min.js'></script>
+    </head>
+    <body>
+        <script>
+            const authorizeEndpoint = localStorage.getItem('teams.authUrl');
+            window.location.assign(authorizeEndpoint);
+        </script>
+    </body>
+</html>
